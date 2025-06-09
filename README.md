@@ -1,1 +1,48 @@
 # Anonymous
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>Взломан брат!</title>
+<style>
+  body {
+    background: black;
+    color: lime;
+    font-family: monospace;
+    padding: 20px;
+    animation: flicker 1.5s infinite alternate;
+  }
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+  #cookieBox {
+    background: #222;
+    padding: 15px;
+    margin-top: 20px;
+    white-space: pre-wrap;
+    border: 2px solid lime;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  h1 {
+    color: red;
+    text-shadow: 0 0 5px red;
+  }
+</style>
+</head>
+<body>
+
+<h1>Тебя взломали, брат!</h1>
+<p>Анонимус уже смотрит твои куки...</p>
+
+<div id="cookieBox">Загрузка куки...</div>
+
+<script>
+  const cookies = document.cookie || 'Куки отсутствуют';
+  const cookieBox = document.getElementById('cookieBox');
+  cookieBox.textContent = cookies;
+</script>
+
+</body>
+</html>
